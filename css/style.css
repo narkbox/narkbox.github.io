@@ -133,12 +133,12 @@ header {
 }
 .heaver-nav-list {
     display:flex;
-    margin: 3px 0;
+    margin: 1px 0;
     padding: 0;
     list-style-type: none;
 }
 .header-nav-item:first-child {
-    margin: 0 auto 0 0.5em;
+    margin: 0 auto 0 1.5vw;
     font-size: 1.4em;
 }
 .header-nav-item:not(:first-child):not(:last-child) {
@@ -146,7 +146,7 @@ header {
     font-size: 1.4em;
 }
 .header-nav-item:last-child {
-    margin: 0 0.5em 0 auto;
+    margin: 0 1.5vw 0 auto;
     font-size: 1.4em;
 }
 .header-nav a {
@@ -191,16 +191,16 @@ main {
 .main-section > h2 {
     margin:0;
     position: relative;
-    font-size: 2.2em;
-    line-height: 1.8em;
-    font-weight: 400;
+    font-size: 2.22em;
+    line-height: 1.6em;
+    font-weight: 250;
     /* color: var(--color-darkgreen2); */
     color: rgb(107, 146, 130);
     background-color: rgba(53, 151, 146, 0.1);
     border-radius:0 5px 5px 0;
     width: auto;
     max-width: fit-content;
-    height: 70px;
+    height: 64px;
     padding-left: 0.8em;
     margin-left: -0.9em;
     padding-right: 3em;
@@ -209,10 +209,10 @@ main {
 .main-section > h3 {
     font-size: 1.8em;
     line-height: 1.3em;
-    font-weight: 300;
+    font-weight: 200;
     /* color: var(--color-darkgreen2); */
-    color: rgb(116, 121, 116);
-    background-color: rgba(204, 228, 216, 0.596);
+    color: rgb(136, 155, 160);
+    background-color: rgba(199, 219, 226, 0.596);
     border-radius:0 3px 3px 0;
     width: auto;
     max-width: fit-content;
@@ -259,15 +259,15 @@ main {
 }
 .main-aside > h3 {
     font-size: 1.5em;
-    line-height: 1.8em;
-    font-weight: 400;
+    line-height: 1.6em;
+    font-weight: 220;
     /* color: var(--color-darkgreen2); */
     color: rgb(234, 243, 239);
     background-color: rgba(88, 151, 148, 0.596);
     border-radius:0 3px 3px 0;
     width: auto;
     max-width: fit-content;
-    height: 40px;
+    height: 38px;
     padding: 0 1.5em 0 0.8em;
     margin: 0 -2em 1em -1.3em;
 }
