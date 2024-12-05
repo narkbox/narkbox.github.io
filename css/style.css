@@ -1,0 +1,419 @@
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-optical-sizing: auto;
+    font-display: swap;
+    src: url('/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    /* variable font handling https://web.dev/articles/variable-fonts#variable_fonts_in_css the whole page was a pretty cool read tho */
+    src: url('/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype') tech('variations');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 100 900;
+    font-optical-sizing: auto;
+    font-display: swap;
+    src: url('/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    src: url('/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype') tech('variations');
+}
+@font-face {
+    font-family: 'Alegreya';
+    font-style: normal;
+    font-weight: 400 900;
+    font-optical-sizing: auto;
+    font-display: swap;
+    src: url('/fonts/Alegreya/Alegreya-VariableFont_wght.ttf') format('truetype');
+    src: url('/fonts/Alegreya/Alegreya-VariableFont_wght.ttf') format('truetype') tech('variations');
+}
+@font-face {
+    font-family: 'Alegreya';
+    font-style: italic;
+    font-weight: 400 900;
+    font-optical-sizing: auto;
+    font-display: swap;
+    src: url('/fonts/Alegreya/Alegreya-Italic-VariableFont_wght.ttf') format('truetype');
+    src: url('/fonts/Alegreya/Alegreya-Italic-VariableFont_wght.ttf') format('truetype') tech('variations');
+}
+:root {
+    --color-darkgreen: rgb(99, 143, 125);
+    --color-darkgreen2: rgb(84, 115, 99);
+    --color-lightblue: rgb(235, 245, 245);
+    --color-lightblue2: rgb(225, 233, 233);
+    --color-transparent-gray: rgba(226, 226, 226, 0.3);
+    --color-transparent-gray2: rgba(226, 226, 226, 0.5);
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 18px;
+}
+html, body, .header-content, .main-content {
+    min-width: 800px;
+}
+h1, h2, h3, h4, h5 {
+    font-weight:300;
+}
+b {
+    font-weight: 400;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-shadow: 0 0 4px white;
+    transition: text-shadow 0.3s ease;
+}
+/* for header bg that's always full width */
+header { 
+    background-color: var(--color-darkgreen);
+    width: 100%;
+    border-radius: 0 0 4px 4px;
+    
+}
+/* separate content from full width header, flexibility for sizing this content elem */
+.header-content { 
+    margin: auto;
+    display: flex;
+    /* capped for high res monitors... nav bar on 4k monitors goes too far off to the side if uncapped */
+    max-width: 1800px; 
+    margin-bottom: 1.5em;
+    flex-wrap: wrap;
+
+}
+.header-logo {
+    display: flex;
+    align-items: flex-end;
+    flex: 1 1 50%;
+}
+.header-logo > h1 {
+    margin: -1em 0 0 0.2em;
+    color: white;
+    align-self:flex-end;
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5.2em;
+    /* logo autosizing, on smaller screens/mobile */
+    @media screen and (max-width: 1200px) { 
+        font-size: 10vw;
+        margin: -0.15em 0.25em 0 0.25em;
+    }
+     /* minimum screen size handling = 800px */
+    @media screen and (max-width: 800px){
+        font-size: 80px;
+    }
+}
+.header-logo > img {
+    height: 100px;
+    width: auto;
+
+    margin: 6px 0 6px 6px;
+    /* logo autosizing, on smaller screens/mobile */
+    @media screen and (max-width: 1200px) { 
+        height: auto;
+        width: 10vw;
+    }
+    /* minimum screen size handling = 800px */
+    @media screen and (max-width: 800px) { 
+        width: 80px;
+    }
+}
+.header-nav {
+    flex: 1 1 50%;
+    margin-left: auto;
+    align-self: flex-end;
+    border-radius: 3px 3px 0 0;
+    background-color: var(--color-transparent-gray);
+}
+.heaver-nav-list {
+    display:flex;
+    margin: 3px 0;
+    padding: 0;
+    list-style-type: none;
+}
+.header-nav-item:first-child {
+    margin: 0 auto 0 0.5em;
+    font-size: 1.4em;
+}
+.header-nav-item:not(:first-child):not(:last-child) {
+    margin: 0 auto;
+    font-size: 1.4em;
+}
+.header-nav-item:last-child {
+    margin: 0 0.5em 0 auto;
+    font-size: 1.4em;
+}
+.header-nav a {
+    padding: 4px;
+    color: white;
+    border-top: none;
+    border-bottom: none;
+    text-decoration: none;
+    text-underline-offset: -0.9em;
+    text-decoration-color: rgba(255,255,255,0);
+}
+.header-nav a:hover {
+    content: '';
+    width: 100%;
+    position:relative;
+    left: 0;
+    top: 0;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+    text-decoration-color: rgba(255,255,255,0.8);
+    transition: text-underline-offset 0.4s ease, text-decoration-color 0.8s ease;
+}
+main {
+    margin: 1.5em auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1680px;
+    /* margin: 2em auto; */
+    gap: 2em;
+    padding: 0 2em;
+}
+
+.main-section {
+    /* width relative to other main-content elem... oof, still tryin out flex sizing for smallscreen/mobile wrapping */
+    flex: 5 0 669px; 
+    background-color: var(--color-lightblue);
+    padding: 1.5em 2em;
+    border-radius: 3px 0 0px 3px;
+    gap: 2em;
+}
+.main-section > h2 {
+    margin:0;
+    position: relative;
+    font-size: 2.2em;
+    line-height: 1.8em;
+    font-weight: 400;
+    /* color: var(--color-darkgreen2); */
+    color: rgb(107, 146, 130);
+    background-color: rgba(53, 151, 146, 0.1);
+    border-radius:0 5px 5px 0;
+    width: auto;
+    max-width: fit-content;
+    height: 70px;
+    padding-left: 0.8em;
+    margin-left: -0.9em;
+    padding-right: 3em;
+    
+}
+.main-section > h3 {
+    font-size: 1.8em;
+    line-height: 1.3em;
+    font-weight: 300;
+    /* color: var(--color-darkgreen2); */
+    color: rgb(116, 121, 116);
+    background-color: rgba(204, 228, 216, 0.596);
+    border-radius:0 3px 3px 0;
+    width: auto;
+    max-width: fit-content;
+    height: 40px;
+    padding: 0 2em 0.15em 0.8em;
+    margin: 1.5em -1.5em 0 -1.1em;
+}
+.main-section > p {
+    margin: 1em;
+    text-align: justify;
+    font-size: 1.2em;
+}
+.main-section img {
+    width: calc(100% - 2em);
+    height: auto;
+    margin: 1em;
+}
+.main-section-float-img {
+    width: 60% !important;
+    margin: 0 0 1em 2em !important;
+    height: auto;
+    float: right;
+}
+.section-footer {
+    font-style: italic;
+    text-align: right;
+    margin-top: 2.5em;
+}
+.main-aside {
+    /* width relative to other main-section elem */
+    flex: 2 0 270px;
+    background-color: var(--color-lightblue2);
+    color: #222;
+    padding: 2em;
+    border-radius: 0 3px 3px 0px;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.main-aside >:nth-last-child(2) {
+    margin-bottom: 3em;
+
+}
+.main-aside > h3 {
+    font-size: 1.5em;
+    line-height: 1.8em;
+    font-weight: 400;
+    /* color: var(--color-darkgreen2); */
+    color: rgb(234, 243, 239);
+    background-color: rgba(88, 151, 148, 0.596);
+    border-radius:0 3px 3px 0;
+    width: auto;
+    max-width: fit-content;
+    height: 40px;
+    padding: 0 1.5em 0 0.8em;
+    margin: 0 -2em 1em -1.3em;
+}
+
+.main-aside > h4 {
+    margin: 0 0 0.15em -0.4em;
+    font-size: 1.25em;
+    /* letter-spacing: 0.1em; */
+    font-weight:300;
+}
+.main-aside > p {
+    text-align: justify;
+    font-size: 0.9em;
+    margin: 0.5em 0 0.75em 0;
+}
+.main-aside img {
+    margin: 0.25em 0 2em 0;
+    padding: 0;
+    width: 95%;
+    height: auto;
+    margin-left:2.5%;
+}
+.main-aside-city-link {
+    margin: 0;
+}
+.main-aside-facts-list {
+    list-style-type: none;
+    font-size: 0.9em;
+    margin: 0 0 2em -0.5em;
+    padding: 0;
+}
+.main-aside-facts-item {
+    margin: 0 0 0.5em 0;
+
+}
+.aside-footer {
+    padding: 2em 0 0 0;
+    margin-top: auto;
+    border-radius: 3px 3px 3px 0px;
+    background-color: rgba(193, 205, 207, 0.25);
+    margin: auto -2em -2em -2em;
+    padding: 1em;
+}
+.aside-footer-citation {
+    font-size: 0.6em;
+    margin: 0.4em;
+    
+}
+form {
+    font-size: 1.2em;
+    margin: 2em;
+}
+.form-row {
+    display: flex;
+    /* justify-content:left; */
+    margin: 1em 0;
+    width: 30em;
+}
+.form-row-full * {
+    flex: 1 1 100%;
+}
+.form-row label {
+    flex: 1 1 25%;
+}
+
+.form-row input {
+    flex: 1 1 75%;
+}
+.form-row button {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+/* because transparent colors used, they stack and add up to be different but all still same var color referenced */
+.contacts-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-transparent-gray2);
+    
+}
+.contacts-table th,
+.contacts-table td {
+    border: 2px solid var(--color-transparent-gray2);
+    padding: 0.25em 0.75em;
+}
+
+.contacts-table-head th {
+    text-align: center;
+    background-color: var(--color-transparent-gray2);
+    font-weight: bold;
+}
+
+.contacts-table-body td:first-child {
+    text-align: left;
+}
+
+.contacts-table-body td:nth-child(2),
+.contacts-table-body td:nth-child(3) {
+    text-align: center;
+}
+
+.contacts-table-body td:last-child {
+    text-align: right;
+}
+.cookie-banner {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 460px;
+    background-color: var(--color-darkgreen2);
+    color: white;
+    padding: 0.5em;
+    font-size: 0.8em;
+    border-radius: 5px 0 0 5px;
+}
+.cookie-banner p {
+    margin: 0;
+}
+.cookie-buttons button {
+    padding: 0.5em 0.5em;
+    border: none;
+    font-size: 0.9em;
+    border-radius: 3px;
+}
+
+.cookie-banner-button-accept {
+    background-color: var(--color-darkgreen);
+    color: white;
+    margin-left: 0.5em;
+}
+
+.cookie-banner-button-deny {
+    background-color: #da8c6d;
+    color: white;
+}
+.home-main-aside-header {
+    margin-bottom: 0.5em !important;
+}
+
+button {
+    border-radius: 3px;
+    cursor:pointer;
+}
+.box-shadow {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+#contactForm {
+    font-size: 1em;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Washington State - Contact Form</title>
+        <link rel="stylesheet" href="./css/style.css">
+    <body>
+        <header class="box-shadow">
+            <div class="header-content" role="heading">
+                <span class="header-logo">
+                    <img src="./img/WA-Header-Logo_flux.1.png" alt="Washington state circl logo (USA) with the text  &quot;Washington&quot; at the top of the circle and the text &quot;State&quot; at the bottom">
+                    <h1>Washington</h1>
+                </span>
+                <nav class="header-nav">
+                    <ul class="heaver-nav-list">
+                        <li class="header-nav-item"><a href="index.html">Home</a></li>
+                        <li class="header-nav-item"><a href="olympia.html">Olympia</a></li>
+                        <li class="header-nav-item"><a href="seattle.html">Seattle</a></li>
+                        <li class="header-nav-item"><a href="leavenworth.html">Leavenworth</a></li>
+                        <li class="header-nav-item"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header> 
+        <main>
+            <section class="main-section">
+                <h2>Contact Us</h2>
+                <p>
+                    Have a question? Fill out the form below.
+                </p>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" name="firstName" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" name="lastName" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="emailAddress">Email Address:</label>
+                        <input type="email" id="emailAddress" name="emailAddress" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="confirmEmail">Confirm Email:</label>
+                        <input type="email" id="confirmEmail" name="confirmEmail" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="question">Your Question:</label>
+                    </div>
+                    <div class="form-row form-row-full">
+                        <textarea name="question" rows="13" placeholder="Ask a question"></textarea>
+                    </div>
+                    <div class="form-row form-row-full">
+                        <button type="button" onclick="checkEmailsMatch()">Submit</button>
+                    </div>
+                    <p><sup><small>Your information will remain private and will not be shared with others.</small></sup></p>
+
+                </form>
+                
+                <h3>Other WA State Contacts</h3>
+                <table class="contacts-table">
+                    <thead class="contacts-table-head">
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Mail</th>
+                        </tr>
+                    </thead>
+                    <tbody class="contacts-table-body">
+                        <tr>
+                            <td><a href="https://www.commerce.wa.gov/contact/" target="_blank" rel="noopener noreferrer">WA Department of Commerce</a></td>
+                            <td><a href="tel:+1-360-725-4000">360-725-4000</a></td>
+                            <td><a href="mailto:communications@commerce.wa.gov">communications@commerce.wa.gov</a></td>
+                            <td>PO Box 42525<br>Olympia, WA 98504-2525</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://governor.wa.gov/contacting-governor/contacting-governors-office" target="_blank" rel="noopener noreferrer">WA Governors Office</a></td>
+                            <td><a href="tel:+1-360-902-4111">360-902-4111</a></td>
+                            <td><a href="https://governor.wa.gov/contacting-governor/contacting-governors-office/send-gov-inslee-e-message" target="_blank" rel="noopener noreferrer">Go Here to Send E-Message</a></td>
+                            <td>PO Box 40002<br>Olympia, WA 98504-0002</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.business.wa.gov/" target="_blank" rel="noopener noreferrer">WA Small Business Guidance</td>
+                            <td><a href="tel:+1-360-725-0628">360-725-0628</a></td>
+                            <td><a href="mailto:media@wastate.gov">help@business.wa.gov</a></td>
+                            <td>PO Box 43125<br>Olympia, Washington 98504-3125</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <footer class="section-footer">
+                    - Washington State Government Office
+                </footer>
+            </section>
+            
+            <aside class="main-aside">
+                <h3>Have a question for us?</h3>
+                <ol>
+                    <li>Fill out the contact form.</li>
+                    <li>Double-check your email address.</li>
+                    <li>Click the 'Submit' button to send your message.</li>
+                    <li>We typically respond within 3 business days.</li>
+                </ol>
+                <img src="./img/WA-home_contact-page_flux.1.InSPyReNet.png" alt="Washington state support person talking a picture you'd put on a contact website page">
+                <h4>Our Hours of Operation:</h4>
+                <ul>
+                    <li>Monday: 6am - 5pm</li>
+                    <li>Tuesday: 8am - 6pm</li>
+                    <li>Wednesday: 8am - 6pm</li>
+                    <li>Thursday: 8am - 6pm</li>
+                    <li>Friday: 6am - 5pm</li>
+                </ul>
+                <footer class="aside-footer">
+                    <p class="aside-footer-citation">
+                        <sup>*</sup> Fonts used on this site (Inter and Alegreya) are from 
+                        <cite>
+                            <a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">Google Fonts</a>.
+                        </cite>
+                    </p>
+                    <p class="aside-footer-citation">
+                        <sup>*</sup> Some images on this website were processed with 
+                        <cite><a href="https://github.com/plemeri/InSPyReNet" target="_blank" rel="noopener noreferrer">InSPyReNet</a>, 
+                        to remove backgrounds; creating transparent backgrounds.</cite>
+                    </p>
+                    <p class="aside-footer-citation">
+                        <sup>*</sup> All images on this site were generated by me using the FLUX.1 [dev] AI image generation model.
+                        <cite><a href="https://huggingface.co/black-forest-labs/FLUX.1-dev" target="_blank" rel="noopener noreferrer">FLUX.1 [dev]</a></cite>
+                    </p>
+                    <p class="aside-footer-citation">
+                        <sup>*</sup> Narrative content on site was written by me.
+                        Other sources, such as factual information, are cited and listed in the footer section above.
+                    </p>
+                </footer>
+            </aside>
+        </main>
+        <script src="./js/contact.js"></script>
+    </body>
+</html>
